@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Price Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Food Price Calculator</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Price ($)</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Burger</td>
+                    <td>5.00</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn decrease" data-price="5">-</button>
+                            <input class="quantity-input" type="number" value="0" data-price="5" />
+                            <button class="btn increase" data-price="5">+</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pizza</td>
+                    <td>8.00</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn decrease" data-price="8">-</button>
+                            <input class="quantity-input" type="number" value="0" data-price="8" />
+                            <button class="btn increase" data-price="8">+</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Salad</td>
+                    <td>4.00</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn decrease" data-price="4">-</button>
+                            <input class="quantity-input" type="number" value="0" data-price="4" />
+                            <button class="btn increase" data-price="4">+</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Drink</td>
+                    <td>2.00</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn decrease" data-price="2">-</button>
+                            <input class="quantity-input" type="number" value="0" data-price="2" />
+                            <button class="btn increase" data-price="2">+</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total">Total: $<span id="total">0.00</span></div>
+        <button class="btn reset" id="reset">Reset</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
