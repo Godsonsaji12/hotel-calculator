@@ -1,10 +1,13 @@
 const updateTotal = () => {
-    const quantities = document.querySelectorAll('.quantity-input');
+    const rows = document.querySelectorAll('tbody tr');
     let total = 0;
 
-    quantities.forEach(element => {
-        const price = parseFloat(element.dataset.price);
-        const quantity = parseInt(element.value) || 0;
+    rows.forEach(row => {
+        const priceInput = row.querySelector('.price-input');
+        const quantityInput = row.querySelector('.quantity-input');
+
+        const price = parseFloat(priceInput.value) || 0;
+        const quantity = parseInt(quantityInput.value) || 0;
         total += price * quantity;
     });
 
@@ -27,11 +30,14 @@ document.querySelectorAll('.decrease').forEach(button => {
     });
 });
 
-document.querySelectorAll('.quantity-input').forEach(input => {
+document.querySelectorAll('.quantity-input, .price-input').forEach(input => {
     input.addEventListener('input', updateTotal);
 });
 
 document.getElementById('reset').addEventListener('click', function() {
     document.querySelectorAll('.quantity-input').forEach(element => element.value = 0);
+    document.querySelectorAll('.price-input').forEach((element, index) => {
+        element.value = [5.00, 8.00, 4.00, 2.00][index].toFixed(2);
+    });
     document.getElementById('total').textContent = '0.00';
 });
